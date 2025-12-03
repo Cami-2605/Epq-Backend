@@ -2,34 +2,29 @@ package com.epq.epq_backend.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "REPORTE")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Table(name = "reportes")
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor @Builder
 public class reporte {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_REPORTE")
     private Long id;
 
+    // Municipio seleccionado
     @ManyToOne
-    @JoinColumn(name = "ID_MUNICIPIO", nullable = false)
+    @JoinColumn(name = "municipio_id")
     private municipio municipio;
 
+    // Periodo seleccionado
     @ManyToOne
-    @JoinColumn(name = "ID_PERIODO", nullable = false)
+    @JoinColumn(name = "periodo_id")
     private periodo periodo;
 
-    @Temporal(TemporalType.DATE)
-    private Date fechaInicio;
+    private LocalDate fechaDesde;
 
-    @Temporal(TemporalType.DATE)
-    private Date fechaFin;
+    private LocalDate fechaHasta;
 }
-

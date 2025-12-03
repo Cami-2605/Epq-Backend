@@ -7,7 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
 public class registroUsuarioDto {
     private String nombres;
     private String apellidos;
@@ -15,5 +14,5 @@ public class registroUsuarioDto {
     private String telefono;
     private String correo;
     private String usuario;
-    private String contraseña;
+    private String contrasena;
 }

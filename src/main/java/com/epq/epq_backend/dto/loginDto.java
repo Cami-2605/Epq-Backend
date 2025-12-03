@@ -4,7 +4,7 @@ import lombok.*;
 
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor @Builder
-public class municipioDto {
-    private Long id;
-    private String nombre;
+public class loginDto {
+    private String usuario;
+    private String contrasena;
 }
