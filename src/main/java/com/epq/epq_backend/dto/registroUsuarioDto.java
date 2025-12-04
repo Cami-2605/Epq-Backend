@@ -8,11 +8,11 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class registroUsuarioDto {
+
     private String nombres;
     private String apellidos;
     private String documento;
     private String telefono;
     private String correo;
     private String usuario;
-    private String contrasena;
 }

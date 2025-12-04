@@ -1,6 +1,7 @@
 package com.epq.epq_backend.controller;
 
 import com.epq.epq_backend.dto.loginDto;
+import com.epq.epq_backend.dto.registroUsuarioDto;
 import com.epq.epq_backend.dto.usuarioDto;
 import com.epq.epq_backend.service.usuarioService;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class authController {
     private final usuarioService usuarioService;
 
     @PostMapping("/register")
-    public ResponseEntity<usuarioDto> registrarUsuario(@RequestBody RegistroUsuarioDto dto) {
+    public ResponseEntity<usuarioDto> registrarUsuario(@RequestBody registroUsuarioDto dto) {
         return ResponseEntity.ok(usuarioService.registrar(dto));
     }
 

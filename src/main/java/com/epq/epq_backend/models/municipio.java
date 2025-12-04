@@ -3,10 +3,12 @@ package com.epq.epq_backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "municipios")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor @Builder
 public class municipio {
 
     @Id

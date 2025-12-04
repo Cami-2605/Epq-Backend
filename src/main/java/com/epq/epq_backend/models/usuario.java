@@ -3,10 +3,12 @@ package com.epq.epq_backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "usuarios")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor @Builder
 public class usuario {
 
     @Id
@@ -14,16 +16,9 @@ public class usuario {
     private Long id;
 
     private String nombres;
-
     private String apellidos;
-
     private String documento;
-
     private String telefono;
-
     private String correo;
-
     private String usuario;
-
-    private String contrasena;
 }

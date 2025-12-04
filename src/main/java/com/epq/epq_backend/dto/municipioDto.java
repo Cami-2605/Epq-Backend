@@ -2,8 +2,10 @@ package com.epq.epq_backend.dto;
 
 import lombok.*;
 
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor @Builder
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class municipioDto {
     private Long id;
     private String nombre;

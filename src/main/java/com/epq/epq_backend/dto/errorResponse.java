@@ -1,20 +1,15 @@
 package com.epq.epq_backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.time.Instant;
+import lombok.*;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class errorResponse {
-    private Instant timestamp;
-    private int status;
-    private String error;
-    private String message;
-    private String path;
+
+    private int status;        // 400, 404, 500...
+    private String error;      // "Bad Request", "Not Found"...
+    private String message;    // descripción del error
+    private String path;       // endpoint donde ocurrió
 }
