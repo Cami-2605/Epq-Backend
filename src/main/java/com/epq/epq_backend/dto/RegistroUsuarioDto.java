@@ -7,11 +7,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class RegistroUsuarioDto {
-    String nombres;
-    String apellidos;
-    String documento;
-    String telefono;
-    String correo;
-    String usuario;
+    private String nombres;
+    private String apellidos;
+    private String documento;
+    private String telefono;
+    private String correo;
+    private String usuario;
+    private String password;
 }

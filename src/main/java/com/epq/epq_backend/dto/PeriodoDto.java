@@ -3,12 +3,15 @@ package com.epq.epq_backend.dto;
 import lombok.*;
 import java.time.LocalDate;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class PeriodoDto {
-    Long id;
-    LocalDate fechaInicio;
-    LocalDate fechaFin;
+    private Long id;
+    private String nombre;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
 }

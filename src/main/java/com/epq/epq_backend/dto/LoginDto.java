@@ -2,11 +2,13 @@ package com.epq.epq_backend.dto;
 
 import lombok.*;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class LoginDto {
-    String usuario;
-    String password;
+    private String usuario;
+    private String password;
 }

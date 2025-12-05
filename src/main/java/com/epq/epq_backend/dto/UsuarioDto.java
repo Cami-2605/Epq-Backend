@@ -7,7 +7,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class UsuarioDto {
+    Long id;
     String nombres;
     String apellidos;
     String documento;

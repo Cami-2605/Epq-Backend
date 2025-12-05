@@ -2,26 +2,27 @@ package com.epq.epq_backend.controller;
 
 import com.epq.epq_backend.dto.UsuarioDto;
 import com.epq.epq_backend.service.UsuarioService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/usuarios")
-@RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@RequestMapping("/api/usuarios")
 public class UsuarioController {
+
     private final UsuarioService usuarioService;
 
-    @GetMapping
-    public ResponseEntity<List<UsuarioDto>> listar() {
-        return ResponseEntity.ok(usuarioService.listar());
+    public UsuarioController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioDto> obtener(@PathVariable Long id) {
-        return ResponseEntity.ok(usuarioService.obtenerPorId(id));
+    public UsuarioDto obtenerPorId(@PathVariable Long id) {
+        return usuarioService.obtenerPorId(id);
+    }
+
+    @GetMapping
+    public List<UsuarioDto> listarTodos() {
+        return usuarioService.listar();
     }
 }

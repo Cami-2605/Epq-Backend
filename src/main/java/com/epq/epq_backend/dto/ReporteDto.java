@@ -3,12 +3,17 @@ package com.epq.epq_backend.dto;
 import lombok.*;
 import java.time.LocalDate;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class ReporteDto {
-    Long id;
-    LocalDate fechaDesde;
-    LocalDate fechaHasta;
+    private Long id;
+    private Long municipioId;
+    private Long periodoId;
+    private LocalDate fechaDesde;
+    private LocalDate fechaHasta;
+    private String observaciones;
 }

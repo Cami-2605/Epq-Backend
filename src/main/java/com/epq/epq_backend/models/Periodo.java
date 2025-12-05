@@ -4,17 +4,17 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "periodos")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "periodos")
-public class Periodo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+public class Periodo {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nombre;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
 }

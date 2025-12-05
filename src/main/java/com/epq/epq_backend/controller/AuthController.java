@@ -1,25 +1,26 @@
 package com.epq.epq_backend.controller;
 
 import com.epq.epq_backend.dto.*;
-import com.epq.epq_backend.service.AuthService;
-import lombok.RequiredArgsConstructor;
+import com.epq.epq_backend.service.UsuarioService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
-@RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@RequestMapping("/api/auth")
 public class AuthController {
 
-    private final AuthService authService;
+    private final UsuarioService usuarioService;
 
-    @PostMapping("/registro")
-    public AuthResponseDto registrar(@RequestBody RegistroUsuarioDto dto) {
-        return authService.registrar(dto);
+    public AuthController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
     }
 
     @PostMapping("/login")
     public AuthResponseDto login(@RequestBody LoginDto dto) {
-        return authService.login(dto);
+        return usuarioService.login(dto);
+    }
+
+    @PostMapping("/registro")
+    public UsuarioDto registrar(@RequestBody RegistroUsuarioDto dto) {
+        return usuarioService.registrar(dto);
     }
 }

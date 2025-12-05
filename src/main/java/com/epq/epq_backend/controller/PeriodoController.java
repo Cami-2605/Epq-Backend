@@ -2,21 +2,27 @@ package com.epq.epq_backend.controller;
 
 import com.epq.epq_backend.dto.PeriodoDto;
 import com.epq.epq_backend.service.PeriodoService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/periodos")
-@RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@RequestMapping("/api/periodos")
 public class PeriodoController {
+
     private final PeriodoService periodoService;
 
+    public PeriodoController(PeriodoService periodoService) {
+        this.periodoService = periodoService;
+    }
+
     @GetMapping
-    public ResponseEntity<List<PeriodoDto>> listar() {
-        return ResponseEntity.ok(periodoService.listar());
+    public List<PeriodoDto> listar() {
+        return periodoService.listar();
+    }
+
+    @GetMapping("/{id}")
+    public PeriodoDto obtener(@PathVariable Long id) {
+        return periodoService.buscarPorId(id);
     }
 }
